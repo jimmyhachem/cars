@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  mix-blend-mode: color-dodge;
+  background: linear-gradient(45deg, #030303, #333);
+}
+
+.cars {
+  position: absolute;
+  opacity: 0.5;
+  transform: rotateY(180deg);
+  transition: 0.5s;
+  top: 0;
+}
+
+.lambo {
+  left: -70px;
+}
+
+.toyota {
+  left: 0px;
+}
+.jeep {
+  width: 500px;
+  left: 0px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 300px;
+  height: 450px;
+  background: radial-gradient(100% 100% at 50% 0%, #f364a2 0%, #56136c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.box1 {
+  border-radius: 5px 0 0 5px;
+}
+
+.box2 {
+  filter: hue-rotate(180deg);
+}
+
+.box3 {
+  filter: hue-rotate(280deg);
+  border-radius: 0 5px 5px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 65%;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.849);
+  border-radius: 50px;
+  padding: 13px 30px;
+  font-family: Lexend Deca;
+  font-size: 15px;
+  transition: background 0.3s, border 0s;
+  z-index: 1;
+}
+
+a:hover {
+  background: rgba(255, 255, 255, 0);
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+h1 {
+  font-family: Big Shoulders Display;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.552);
+  transition: 0.3s;
+}
+
+p {
+  font-family: Lexend Deca;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.552);
+  transition: 0.3s;
+}
+
+.box::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #030303;
+
+  opacity: 0.5;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.box:hover::before {
+  top: 100%;
+}
+
+.box:hover p {
+  color: #fff;
+}
+
+.box:hover h1 {
+  color: #fff;
+}
+
+img {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.box:hover img {
+  opacity: 1;
+}
+
+.box:hover .cars {
+  left: 150px;
+  top: -60px;
+}
+
+.box:hover .lambo {
+  left: 80px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    height: 100%;
+  }
+  .box {
+    width: 100%;
+    height: 500px;
+  }
+
+  .box1 {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .box3 {
+    border-radius: 0px 0px 5px 5px;
+  }
+}
